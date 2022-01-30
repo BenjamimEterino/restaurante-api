@@ -30,9 +30,16 @@ public class CategoriaService {
 		return categoria;
 	}
 	
-	public Categoria excluir(Long categoriaId) {
+	
+	public void excluir(Long categoriaId) {
 		categoriaRepository.deleteById(categoriaId);
-		
-		return this.buscarId(categoriaId);
+	}
+
+	public boolean existsById(Long garcomId) {
+		if (categoriaRepository.existsById(garcomId)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
