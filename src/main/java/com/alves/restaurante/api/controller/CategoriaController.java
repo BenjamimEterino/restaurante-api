@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alves.restaurante.domain.model.Categoria;
-import com.alves.restaurante.domain.model.Garcom;
-import com.alves.restaurante.domain.model.Mesa;
 import com.alves.restaurante.domain.repository.CategoriaRepository;
 import com.alves.restaurante.domain.service.CategoriaService;
 
@@ -28,7 +26,7 @@ public class CategoriaController {
 	private CategoriaRepository categoriaRepository;
 	private final CategoriaService categoriaService;
 	
-	@GetMapping("/todas")
+	@GetMapping
 	public ResponseEntity<List<Categoria>> listar() {
 		return ResponseEntity.ok().body(categoriaService.buscar());
 	}
